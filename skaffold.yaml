@@ -1,0 +1,12 @@
+apiVersion: skaffold/v1beta1
+kind: Config
+build:
+  artifacts:
+    - image: php
+    - image: nginx
+      context: ./docker/nginx
+deploy:
+  kubectl:
+    manifests:
+      - ./k8s/php.yaml
+      - ./k8s/nginx.yaml
