@@ -9,7 +9,12 @@
         "symfony/console": "4.1.*",
         "symfony/dotenv": "4.1.*",
         "symfony/flex": "^1.1",
+        "symfony/form": "4.1.*",
         "symfony/framework-bundle": "4.1.*",
+        "symfony/orm-pack": "^1.0",
+        "symfony/security-csrf": "4.1.*",
+        "symfony/twig-bundle": "4.1.*",
+        "symfony/validator": "4.1.*",
         "symfony/yaml": "4.1.*"
     },
     "config": {
@@ -56,5 +61,8 @@
             "allow-contrib": false,
             "require": "4.1.*"
         }
+    },
+    "require-dev": {
+        "symfony/maker-bundle": "^1.9"
     }
 }

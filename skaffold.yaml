@@ -8,5 +8,6 @@ build:
 deploy:
   kubectl:
     manifests:
+      - ./k8s/mariadb.yaml
       - ./k8s/php.yaml
       - ./k8s/nginx.yaml

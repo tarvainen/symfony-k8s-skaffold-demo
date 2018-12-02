@@ -7,9 +7,12 @@ RUN apt-get update \
         git \
     && rm -rf /var/lib/apt/lists/* \
 
-    && docker-php-ext-install -j$(nproc) zip \
-    && docker-php-ext-install -j$(nproc) bcmath \
-    && docker-php-ext-install -j$(nproc) soap \
+    && docker-php-ext-install -j$(nproc) \
+        pdo \
+        pdo_mysql \
+        soap \
+        bcmath \
+        zip \
 
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \

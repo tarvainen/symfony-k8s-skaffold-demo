@@ -14,6 +14,9 @@ spec:
           image: php
           ports:
             - containerPort: 9000
+          env:
+            - name: DATABASE_URL
+              value: mysql://root:password@mariadb:3306/symfony
 ---
 apiVersion: v1
 kind: Service

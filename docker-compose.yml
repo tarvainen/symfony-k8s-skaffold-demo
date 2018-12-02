@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+  php:
+    build:
+      context: .
+    ports:
+      - 9000:9000
+    volumes:
+      - ./:/var/www/app:cached
+    environment:
+      DATABASE_URL: mysql://root:password@mariadb:3306/symfony
+
+  nginx:
+    build:
+      context: ./docker/nginx/
+    ports:
+      - 3000:80
+
+  mariadb:
+    image: mariadb:latest
+    volumes:
+      - mariadb:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+volumes:
+  mariadb: {}
