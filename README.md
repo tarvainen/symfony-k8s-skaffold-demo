@@ -10,13 +10,24 @@ This project will deploy following services:
 
 ## Usage
 
+### skaffold
+
 ```bash
-# deploy to kubernetes and keep watching changes
+# watch changes
 skaffold dev
 
-# deploy to kubernetes once
+# deploy once
 skaffold run
 
+# initialize db
+make db_init
+```
+
+### docker-compose
+```bash
 # deploy using docker-compose in detached mode
 docker-compose up -d
+
+docker-compose exec php ./bin/console doctrine:database:create
+docker-compose exec php ./bin/console doctrine:migrations:migrate
 ```
