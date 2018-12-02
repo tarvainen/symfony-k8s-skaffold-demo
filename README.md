@@ -28,6 +28,7 @@ make db_init
 # deploy using docker-compose in detached mode
 docker-compose up -d
 
+# initialize db
 docker-compose exec php ./bin/console doctrine:database:create
 docker-compose exec php ./bin/console doctrine:migrations:migrate
 ```
