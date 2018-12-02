@@ -10,6 +10,8 @@ This project will deploy following services:
 
 ## Usage
 
+Get your environment up and running using one of following options and open http://localhost:3000/task
+
 ### skaffold
 
 ```bash
